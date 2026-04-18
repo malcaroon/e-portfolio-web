@@ -391,7 +391,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 90%;
+    height: 90%; 
 }
 
 .download-wrapper {
