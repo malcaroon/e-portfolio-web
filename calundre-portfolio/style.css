@@ -100,10 +100,6 @@ body {
     transform: translateY(0);
 }
 
-.reveal + .reveal {
-    margin-top: 20px;
-}
-
 /* --- HEADER & NAVIGATION (Sticky nav with active link highlight) --- */
 header {
     position: sticky;
