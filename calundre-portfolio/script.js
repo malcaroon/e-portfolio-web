@@ -75,9 +75,7 @@ function reveal() {
 window.addEventListener('scroll', reveal);
 reveal();
 
-/* FEATURE 5: BACK TO TOP + ACTIVE NAV LINKS
-   Shows top button after 300px scroll,
-   highlights matching nav link per section */
+/* FEATURE 5: BACK TO TOP + ACTIVE NAV LINKS */
 const topButton = document.getElementById('topBtn');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('header nav a');
@@ -96,9 +94,15 @@ window.onscroll = function () {
         }
     });
 
+    // --- NEW CODE: Check if user is at the bottom of the page ---
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        current = 'contact'; // Force the 'contact' id to be the current section
+    }
+
     navLinks.forEach(a => {
-        a.classList.remove('active-link');
-        if (a.getAttribute('href').includes(current)) {
+        a.classList.remove('active-link', 'active');
+        // Added "current &&" so it doesn't accidentally highlight everything
+        if (current && a.getAttribute('href').includes(current)) {
             a.classList.add('active-link');
         }
     });
